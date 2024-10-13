@@ -13,8 +13,8 @@ The Pig Game is a fun, interactive dice game for two players. Players take turns
 - Reset functionality to start a new game
 - Visual feedback with dice images
 
-## Project Link
-https://github.com/sagarsrikantcodes/pig-game-project.git
+## Project Live Link:
+   https://sagarsrikantcodes.github.io/pig-game-project/
 
 ## How to Play
 
