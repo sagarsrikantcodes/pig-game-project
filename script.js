@@ -45,6 +45,7 @@ let activePlayer = document.querySelector('section.player.player--0.player--acti
 let dice = document.querySelector('img.dice');
 dice.classList.add('hidden');
 let gameActive = true; // Game is active by default
+let lastDiceRoll;
 
 
 // Function to generate a random number between 1 and 6 
@@ -78,6 +79,7 @@ document.querySelector('button.btn.btn--roll').addEventListener('click', functio
   if (!gameActive) return; // Do nothing if the game is not active.
 
   const roll = rollDice();
+  lastDiceRoll = roll;
   console.log(roll);
   updateDiceImage(roll);
   dice.classList.remove('hidden');
@@ -127,6 +129,15 @@ document.querySelector('button.btn.btn--hold').addEventListener('click', functio
     gameActive = false; // Set gameActive to false when the player wins
     const diceImage = document.querySelector('img.dice');
     diceImage.classList.add('hidden');
+    if (player1TotalScore >= 100) {
+      player1CurrentScore = lastDiceRoll;
+      document.querySelector('p#current--0.current-score').textContent = String(player1CurrentScore);
+    } 
+
+    if (player2TotalScore >= 100) {
+      player2CurrentScore = lastDiceRoll;
+      document.querySelector('p#current--1.current-score').textContent = String(player2CurrentScore);
+    }
   } else {
     switchActivePlayer();
   }
