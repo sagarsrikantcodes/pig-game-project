@@ -143,8 +143,9 @@ document.querySelector('button.btn.btn--new').addEventListener('click', function
   document.querySelector('p#score--0.score').textContent = String(player1TotalScore);
   document.querySelector('p#current--1.current-score').textContent = String(player2CurrentScore);
   document.querySelector('p#score--1.score').textContent = String(player2TotalScore);
+  // Remove the 'player--winner' class from the activePlayer classList
+  activePlayer.classList.remove('player--winner');
 
-  
   if (activePlayer === document.querySelector('section.player.player--1.player--active')) {
     activePlayer.classList.remove('player--active');
     activePlayer = document.querySelector('section.player.player--0');
@@ -154,7 +155,7 @@ document.querySelector('button.btn.btn--new').addEventListener('click', function
   const diceImage = document.querySelector('img.dice');
   diceImage.classList.add('hidden');
   gameActive = true; // Reset gameActive for a new game
-  activePlayer.classList.remove('player--winner');
+  
 });
 
 
